@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             } else {
                  if(data.error === 'ja_respondeu'){
-                   validationMessage.textContent = 'Obrigado! Sua presença (ou do seu grupo) já foi respondida.';
+                   validationMessage.textContent = 'Você ou alguêm do seu grupo, já respondeu. Obrigado!';
                    validationMessage.style.color = 'blue';
                 } else {
                    validationMessage.textContent = 'Seu código de convite é inválido ou expirou.';
