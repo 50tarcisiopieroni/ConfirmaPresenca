@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@400;700&display=swap');
+
+body {
+  font-family: 'Kalam', cursive;
+  background-color: #f7f6f2;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.balloon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.balloon.orange { background-color: #f5a623; }
+.balloon.blue { background-color: #2e64c2; }
+.balloon:nth-child(1) { top: 5%; left: 10%; }
+.balloon:nth-child(2) { top: 15%; right: 8%; width: 40px; height: 40px; }
+.balloon:nth-child(3) { bottom: 10%; left: 5%; width: 25px; height: 25px; }
+.balloon:nth-child(4) { bottom: 20%; right: 15%; }
+.balloon:nth-child(5) { top: 30%; left: 3%; }
+
+.container {
+  background: white;
+  padding: 0 2.5em;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  border: 2px dashed #ccc;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  color: #333;
+  font-size: 2.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.1;
+}
+
+#validation-area, #status-message {
+  margin: 1.5em 0;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+#validation-message {
+  font-weight: bold;
+  color: #e67e22;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #555;
+}
+
+input[type="text"], textarea {
+  padding: 0.8em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+  width: 90%;
+  max-width: 350px;
+  box-sizing: border-box;
+  font-family: 'Kalam', cursive;
+}
+
+input[type="text"][readonly] {
+  background-color: #eee;
+  font-weight: bold;
+  color: #444;
+}
+
+/* --- ESTILOS PARA GRUPO E CONVIDADO ÚNICO --- */
+#group-members-area {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+/* NOVO: Estilo para cada linha de um membro do grupo */
+.group-member-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* NOME <-> OPÇÕES */
+  padding: 10px 5px;
+  border-bottom: 1px solid #eee;
+  width: 95%;
+  margin: 0 auto;
+}
+.member-name {
+  font-size: 1.1em;
+  text-align: left;
+}
+
+/* Estilos para os botões Rádio (usado em ambos os modos) */
+.radio-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8em;
+  width: auto; /* Largura automática para caber na linha do grupo */
+}
+.radio-group input[type="radio"] {
+  margin-left: 15px; /* Espaço entre as opções */
+  margin-right: 5px;
+  transform: scale(1.2);
+}
+.radio-group label {
+  margin: 0;
+  font-size: 1em;
+  font-weight: normal;
+}
+input[type="radio"].sim-option { accent-color: green; }
+input[type="radio"].nao-option { accent-color: red; }
+
+
+button {
+  margin-top: 2em;
+  padding: 1em 2em;
+  border: none;
+  background-color: #e67e22;
+  color: white;
+  font-size: 1.2em;
+  font-family: 'Permanent Marker', cursive;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+button:hover {
+  background-color: #d35400;
+  transform: translateY(-2px);
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+#status-message {
+  font-weight: bold;
+  margin-top: 1.5em;
+}
+.hidden {
+  display: none;
+}

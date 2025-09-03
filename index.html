@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirme sua Presença!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="balloon orange"></div>
+  <div class="balloon blue"></div>
+  <div class="balloon orange"></div>
+  <div class="balloon blue"></div>
+  <div class="balloon orange"></div>
+
+  <div class="container">
+    <h1>30 do Tarcisio 🎉</h1>
+
+    <div id="validation-area">
+      <p id="validation-message">Verificando seu convite...</p>
+    </div>
+
+    <form id="rsvp-form" class="hidden">
+      <input type="hidden" id="grupoId" name="grupoId">
+      <input type="hidden" id="codigo" name="codigo">
+
+      <div id="group-members-area" class="hidden">
+        <label>Quem do seu grupo irá comparecer?</label>
+      </div>
+
+      <div id="single-person-area" class="hidden">
+        <label for="nome">Seu nome:</label>
+        <input type="text" id="nome" name="nome" readonly></br>
+        <label>Você vem?</label>
+        <div class="radio-group">
+          <input type="radio" id="sim" name="presenca" value="Sim" required checked>
+          <label for="sim" style="margin-right: 30px; color: green;">Sim, com certeza!</label>
+          <input type="radio" id="nao" name="presenca" value="Não">
+          <label for="nao" style="color: red;">Não poderei ir.</label>
+        </div>
+      </div>
+
+      <label for="mensagem">Deixe uma mensagem (opcional):</label>
+      <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+
+      <button type="submit">Enviar Confirmação</button>
+    </form>
+
+    <div id="status-message"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
